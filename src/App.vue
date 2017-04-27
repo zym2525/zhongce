@@ -1,22 +1,19 @@
 <template>
-  <div id="app">
+  <div>
+  	<v-header></v-header>
     <router-view></router-view>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'app'
-}
+<script type="text/ecmascript-6">
+	import header from 'components/header/header'
+	export default {
+		components:{
+			'v-header':header
+		}
+	}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus" rel="stylesheet/stylus">
+
 </style>
