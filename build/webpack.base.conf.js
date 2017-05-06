@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
@@ -22,7 +23,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+       "mui": resolve(__dirname, '../static/js/mui.min.js')
     }
   },
   module: {
@@ -63,5 +65,11 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+        mui: resolve(__dirname, '../static/js/mui.min.js'),
+        "window.mui": resolve(__dirname, '../static/js/mui.min.js')
+    })
+  ]
 }

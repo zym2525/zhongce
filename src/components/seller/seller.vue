@@ -1,5 +1,5 @@
 <template>
-	<div>商家</div>
+		<div>商家</div>
 </template>
 
 <script>
